@@ -1,1 +1,1 @@
-DEscriptions
+Descriptions of Scripts
