@@ -1,4 +1,10 @@
 #include "lists.h"
+#include <stdlib.h>
+
+typedef struct listint_s {
+    int n;
+    struct listint_s *next;
+} listint_t;
 
 /**
  * check_cycle - checks if a singly linked list has a cycle in it
@@ -6,23 +12,18 @@
  *
  * Return: 0 if there is no cycle, 1 if there is a cycle
  */
-int check_cycle(listint_t *list)
-{
-	listint_t *single_up, *double_down;
+int check_cycle(listint_t *list) {
+    listint_t *slow = list;
+    listint_t *fast = list;
 
-	if (list == NULL)
-		return (0);
+    while (fast != NULL && fast->next != NULL) {
+        slow = slow->next;
+        fast = fast->next->next;
 
-	single_up = list;
-	double_down = list->next;
+        if (slow == fast) {
+            return 1; // cycle detected
+        }
+    }
 
-	while (fast != NULL && fast->next != NULL)
-	{
-		if (slow == fast)
-			return (1);
-		slow = slow->next;
-		fast = fast->next->next;
-	}
-
-	return (0);
+    return 0; // no cycle detected
 }
