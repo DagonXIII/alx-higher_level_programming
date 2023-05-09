@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-def pow(a, b):
-    result = 1
-    while b > 0:
-        if b & 1:
-            result *= a
-        a *= a
-        b >>= 1
-    return result
+def uppercase(str):
+    for c in str:
+        if ord(c) >= 97 and ord(c) <= 122:
+            upper = chr(ord(c) - 32)
+        else:
+            upper = c
+        print("{:s}".format(upper), end="")
+    print()
