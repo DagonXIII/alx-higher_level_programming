@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 def pow(a, b):
-    if b == 0:
-        return 1
-    else:
-        return a * pow(a, b-1)
+    result = 1
+    while b > 0:
+        if b & 1:
+            result *= a
+        a *= a
+        b >>= 1
+    return result
