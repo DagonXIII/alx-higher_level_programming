@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-def uppercase(str):
-    for c in str:
-        if 'a' <= c <= 'z':
-            print("{:c}".format(ord(c) - 32), end="")
-        else:
-            print("{:c}".format(ord(c)), end="")
-    print()
+def pow(a, b):
+    result = 1
+    while b > 0:
+        result *= a
+        b -= 1
+    return result
