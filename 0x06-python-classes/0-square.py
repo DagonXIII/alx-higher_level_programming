@@ -1,13 +1,13 @@
 #!/usr/bin/python3
+"""
+Module - Square
+Empty class definition for a Square
+"""
+
 
 class Square:
     """
-    A class representing a square.
-
-    Attributes:
-        None
-
-    Methods:
-        None
+    Class - Square
+    Represents a square
     """
     pass
