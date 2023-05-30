@@ -1,20 +1,20 @@
 #!/usr/bin/python3
+"""
+Module - Square
+Class definition for a Square
+"""
+
 
 class Square:
-    """This class represents a square.
-
-    The Square class accepts a size parameter and sets
-    it to the private instance attribute __size.
-
-    The __init__ method assigns the instance attribute size to the
-    private instance attribute __size using the self keyword.
-
-    Args:
-        size (int): defines the size of the square.
-
-    Attributes:
-        __size (int): defines the size of the square as private.
+    """
+    Class - Square
+    Represents a square
     """
 
     def __init__(self, size):
+        """
+        Initializes a square with a given size
+        Args:
+            size (int): The size of the square
+        """
         self.__size = size
