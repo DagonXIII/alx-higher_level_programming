@@ -2,7 +2,6 @@
 
 class Rectangle:
     """
-    Rectangle class
+    Empty class that represents a rectangle.
     """
-    def __init__(self):
-        pass
+    pass
