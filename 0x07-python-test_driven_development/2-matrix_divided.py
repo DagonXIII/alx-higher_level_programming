@@ -7,6 +7,7 @@
 Provides a function to divide all elements of a matrix.
 """
 
+
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix by a given divisor.
