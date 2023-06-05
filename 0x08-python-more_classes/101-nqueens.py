@@ -1,75 +1,58 @@
 #!/usr/bin/python3
+
+"""
+N-Queens backtracking program to print the coordinates of N queens
+on an N x N grid such that they are all in non-attacking positions.
+"""
+
 import sys
 
 def is_safe(board, row, col):
-    """Check if it is safe to place a queen at board[row][col]."""
-    # Check if there is a queen in the same column
+    """Check if it's safe to place a queen at board[row][col]"""
     for i in range(row):
-        if board[i][col] == 1:
+        if board[i] == col or board[i] - i == col - row or board[i] + i == col + row:
             return False
-
-    # Check if there is a queen in the upper left diagonal
-    i = row
-    j = col
-    while i >= 0 and j >= 0:
-        if board[i][j] == 1:
-            return False
-        i -= 1
-        j -= 1
-
-    # Check if there is a queen in the upper right diagonal
-    i = row
-    j = col
-    while i >= 0 and j < N:
-        if board[i][j] == 1:
-            return False
-        i -= 1
-        j += 1
-
     return True
 
-def solve_n_queens(board, row):
-    """Recursive function to solve the N-Queens problem."""
-    # Base case: If all queens are placed, print the solution
+def solve_nqueens(board, row):
+    """Recursive function to solve the N-Queens problem"""
     if row == N:
+        # Base case: All queens have been placed, print the solution
         print_solution(board)
         return
 
-    # Try placing a queen in each column of the current row
     for col in range(N):
         if is_safe(board, row, col):
-            board[row][col] = 1
-            solve_n_queens(board, row + 1)
-            board[row][col] = 0
+            # Place a queen at board[row] = col
+            board[row] = col
+
+            # Recursive call to place queens in the next row
+            solve_nqueens(board, row + 1)
 
 def print_solution(board):
-    """Print the solution in the required format."""
-    solution = []
-    for i in range(N):
-        for j in range(N):
-            if board[i][j] == 1:
-                solution.append([i, j])
+    """Print the solution as a list of coordinates"""
+    solution = [[i, board[i]] for i in range(N)]
     print(solution)
 
-# Check if the program is called with the correct number of arguments
+# Check if the correct number of arguments is provided
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
     sys.exit(1)
 
-# Get the value of N from the command line argument
+# Get the value of N from command line argument
 try:
     N = int(sys.argv[1])
 except ValueError:
     print("N must be a number")
     sys.exit(1)
 
-# Check if N is greater or equal to 4
+# Check if N is at least 4
 if N < 4:
     print("N must be at least 4")
     sys.exit(1)
 
-# Create an empty chessboard
-board = [[0] * N for _ in range(N)]
+# Create an empty list to represent the board
+board = [None] * N
 
 # Solve the N-Queens problem
-solve_n_queens(board, 0)
+solve_nqueens(board, 0)
