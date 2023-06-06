@@ -1,4 +1,2 @@
-import copy
-
 def copy_list(l):
-    return copy.deepcopy(l)
+    return list(l)
