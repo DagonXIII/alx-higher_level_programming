@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Module 101-add_attribute
-Defines a function add_attribute to add a new attribute to an object if possible
+Defines a function add_attribute to add new attribute to an object if possible
 """
 
 
