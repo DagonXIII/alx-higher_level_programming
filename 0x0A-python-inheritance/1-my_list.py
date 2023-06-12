@@ -15,3 +15,9 @@ class MyList(list):
         """
         sorted_list = sorted(self)
         print(sorted_list)
+
+    def __str__(self):
+        """
+        Returns a string representation of the list.
+        """
+        return str(self)
