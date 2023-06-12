@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Module my_list
 """
@@ -14,4 +13,5 @@ class MyList(list):
         """
         Prints the list in sorted (ascending) order.
         """
-        print(sorted(self))
+        sorted_list = sorted(self)
+        print(sorted_list)
