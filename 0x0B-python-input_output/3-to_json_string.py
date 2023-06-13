@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Contains the to_json_string function
+"""
 
 import json
 
