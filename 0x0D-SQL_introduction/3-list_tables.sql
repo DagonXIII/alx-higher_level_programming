@@ -1,2 +1,2 @@
 -- List all tables in a specific database
-SHOW TABLES FROM mysql;
+SHOW TABLES FROM database_name;
