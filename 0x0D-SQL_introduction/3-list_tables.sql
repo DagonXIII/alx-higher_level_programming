@@ -1,4 +1,2 @@
--- List all tables in a specific database
-SELECT table_name
-FROM information_schema.tables
-WHERE table_schema = DATABASE();
+-- List all tables in a database
+SHOW TABLES;
