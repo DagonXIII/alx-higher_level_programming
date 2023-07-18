@@ -1,2 +1,4 @@
 -- List all tables in a specific database
-SHOW TABLES FROM database_name;
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'mysql';
