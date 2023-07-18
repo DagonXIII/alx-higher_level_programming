@@ -1,4 +1,4 @@
 -- List all tables in a specific database
 SELECT table_name
 FROM information_schema.tables
-WHERE table_schema = 'your_database_name';
+WHERE table_schema = DATABASE();
